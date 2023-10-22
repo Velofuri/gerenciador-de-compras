@@ -1,7 +1,10 @@
 'use client'
+import Footer from '@/components/footer'
+import Header from '@/components/header'
 import Input from '@/components/input'
 import ListaProduto from '@/components/listaProduto'
 import TituloSecao from '@/components/tituloSecao'
+import TotalProdutos from '@/components/totalProdutos'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -58,23 +61,15 @@ export default function Home() {
     localStorage.setItem('listaProdutos', JSON.stringify(newListaProduto))
   }
 
-  const TotalProdutos = listaProduto.reduce((acumulador, produto) => {
+  const totalProdutos = listaProduto.reduce((acumulador, produto) => {
     return acumulador + produto.quantidade * produto.valor
   }, 0)
 
   return (
     <main className='box-border bg-gray-200 h-screen'>
-      <header className='flex items-center justify-center gap-8 h-32 bg-gradient-to-t from-gray-200 to-blue-900'>
-        <Image src='/Shopping-Cart.png' width={80} height={80} alt='Carrinho de compra' />
-        <h1 className='text-3xl text-blue-950 mr-2'>Lista de Compras</h1>
-      </header>
+      <Header />
 
-      <section className='flex flex-col items-center'>
-        <TituloSecao titulo='Total dos produtos no carrinho' />
-        <div className='flex items-center text-4xl bg-gray-300 w-72 h-16 rounded-md p-2 shadow-lg'>
-          {`R$ ${TotalProdutos.toFixed(2).replace('.', ',')}`}
-        </div>
-      </section>
+      <TotalProdutos totalProdutos={totalProdutos} />
 
       <section className='flex flex-col items-center mt-10'>
         <TituloSecao titulo='Adicionar novo produto a lista' />
@@ -115,29 +110,7 @@ export default function Home() {
           onExcludeCart={onExcludeCart}
         />
       </section>
-      <footer className='fixed bottom-0 w-full bg-gradient-to-b from-gray-200 to-purple-900'>
-        <div className='flex justify-center gap-4 mb-2 mt-5'>
-          <Link href='https://github.com/Velofuri' target='_blank'>
-            <Image src={'/GitHub.png'} alt='icone github' width={30} height={30} />
-          </Link>
-
-          <Link href='https://www.instagram.com/rafaelvelofuri/' target='_blank'>
-            <Image src={'/instagram.png'} alt='icone instagram' width={30} height={30} />
-          </Link>
-
-          <Link href='https://www.linkedin.com/in/rafaelvelofuri/' target='_blank'>
-            <Image
-              src={'/LinkedInCircled.png'}
-              alt='icone linkedin'
-              width={30}
-              height={30}
-            />
-          </Link>
-        </div>
-        <p className='flex justify-center mb-3 text-blue-950'>
-          Desenvolvido por Rafael Velofuri
-        </p>
-      </footer>
+      <Footer />
     </main>
   )
 }
