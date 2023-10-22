@@ -37,7 +37,12 @@ export default function Item({
       />
 
       <button onClick={() => onIncludeCart(index, valor)}>
-        <Image src={'/addCart.png'} alt='item no carrinho' width={30} height={30} />
+        <Image
+          src={'/addCart.png'}
+          alt='incluir item no carrinho'
+          width={30}
+          height={30}
+        />
       </button>
 
       <button onClick={() => onExcludeCart(index)}>
