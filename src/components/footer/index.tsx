@@ -11,7 +11,7 @@ export default function Footer() {
           </Link>
 
           <Link href='https://www.instagram.com/rafaelvelofuri/' target='_blank'>
-            <Image src={'/instagram.png'} alt='icone instagram' width={30} height={30} />
+            <Image src={'/Instagram.png'} alt='icone instagram' width={30} height={30} />
           </Link>
 
           <Link href='https://www.linkedin.com/in/rafaelvelofuri/' target='_blank'>
