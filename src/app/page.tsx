@@ -66,14 +66,14 @@ export default function Home() {
   }, 0)
 
   return (
-    <main className='box-border bg-gray-200 h-screen'>
+    <main className='box-border'>
       <Header />
 
       <TotalProdutos totalProdutos={totalProdutos} />
 
       <section className='flex flex-col items-center mt-10'>
         <TituloSecao titulo='Adicionar novo produto a lista' />
-        <form onSubmit={aoSalvar} className='flex gap-4 justify-between'>
+        <form onSubmit={aoSalvar} className='flex gap-3 justify-between'>
           <div className='flex flex-col'>
             <Input
               nomeInput='nome-produto'
@@ -85,7 +85,7 @@ export default function Home() {
               required={true}
             />
           </div>
-          <div className='flex flex-col w-14'>
+          <div className='flex flex-col w-10'>
             <Input
               nomeInput='quantidade-produto'
               textoInput='Qtd'

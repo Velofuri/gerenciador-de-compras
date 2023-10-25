@@ -15,7 +15,7 @@ export default function ListaProduto({
   onIncludeCart,
 }: ListaProdutoProps) {
   return (
-    <ul>
+    <ul className='flex flex-col items-center justify-center max-w-xl mx-auto pb-24'>
       {listaDeProdutos.map((produto, index) => (
         <Item
           key={index}
