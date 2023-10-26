@@ -20,14 +20,14 @@ export default function Item({
 }: ListaProdutoProps) {
   const [valor, setValor] = useState<number>(produto.valor)
   return (
-    <li className='grid grid-cols-9 gap-2 mb-2 items-center'>
+    <li className='grid grid-cols-10 gap-2 mb-2 items-center'>
       <h3 className='text-lg text-blue-950 col-span-3'>{produto.nome}</h3>
       <h3 className='p-1 text-sm text-blue-950 bg-gray-300 rounded-md w-auto h-auto text-center'>
         {produto.quantidade}
       </h3>
 
       <Input
-        classes='col-span-1'
+        classes='col-span-2 h-8'
         disabled={produto.valor !== 0}
         nomeInput='preco-produto'
         placeholder='preço'

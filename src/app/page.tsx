@@ -6,7 +6,6 @@ import ListaProduto from '@/components/listaProduto'
 import TituloSecao from '@/components/tituloSecao'
 import TotalProdutos from '@/components/totalProdutos'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export interface IListaProduto {
