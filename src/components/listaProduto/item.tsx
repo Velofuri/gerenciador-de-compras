@@ -38,7 +38,7 @@ export default function Item({
 
       <button onClick={() => onIncludeCart(index, valor)}>
         <Image
-          src={'/AddCart.png'}
+          src={produto.valor === 0 ? '/AddCart.png' : '/Paid.png'}
           alt='incluir item no carrinho'
           width={30}
           height={30}

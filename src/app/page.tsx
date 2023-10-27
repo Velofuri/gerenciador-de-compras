@@ -39,14 +39,14 @@ export default function Home() {
     localStorage.setItem('listaProdutos', JSON.stringify(newListaProduto))
   }
 
-  const aoDeletar = (index: number) => {
+  const onDelete = (index: number) => {
     const newListaProduto = [...listaProduto]
     newListaProduto.splice(index, 1)
     setListaProduto(newListaProduto)
     localStorage.setItem('listaProdutos', JSON.stringify(newListaProduto))
   }
 
-  const aoIncluirNoCarrinho = (index: number, valor: number) => {
+  const onIncludeCart = (index: number, valor: number) => {
     const newListaProduto = [...listaProduto]
     newListaProduto[index].valor = valor
     setListaProduto(newListaProduto)
@@ -104,8 +104,8 @@ export default function Home() {
         <TituloSecao titulo='Lista de produtos' />
         <ListaProduto
           listaDeProdutos={listaProduto}
-          onDelete={aoDeletar}
-          onIncludeCart={aoIncluirNoCarrinho}
+          onDelete={onDelete}
+          onIncludeCart={onIncludeCart}
           onExcludeCart={onExcludeCart}
         />
       </section>
