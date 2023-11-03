@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  assetPrefix: 'https://gerenciador-de-compras.vercel.app',
-}
+const nextConfig = {}
 
 module.exports = nextConfig
